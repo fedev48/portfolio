@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="assets/css/johndoe.css">
 </head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfR24/6fu91rV7r4tIDP" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-uO3SXpiM8Ll2jYkUdiPptI1hF6XUmlQk4J4EuCylJf50nbpVlae8t5xgc/JDDPpE" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-pjaaA8dDz/9GI2mHa6u4HTP7W/UH9mOScQsAP7hUibX39jN1CGA8GdL+MQ0ItP" crossorigin="anonymous"></script>
@@ -183,33 +184,51 @@
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="card">
-                        <div class="card-header">
-                            <div class="mt-2">
-                                <h4>Work Experience</h4>
-                                <span class="line"></span>  
-                            </div>
+                      <div class="card-header">
+                        <div class="mt-2">
+                          <h4>Work Experience</h4>
+                          <span class="line"></span>  
                         </div>
-                        <div class="card-body">
-                            <h6 class="title text-danger">Noni Games Studios</h6>
-                            <h7>Unity Developer - Technical Sound Designer</h7>
-                            <p>2023 – Present</p>
-                            <ul class="no-margin-list subtitle" style="text-align: justify;">
-                                <li>Developed gameplay mechanics including asynchronous scene transitions, dynamic player movement programming, trading, inventory and weather systems, and AI programming.</li>
-                                <li>Created original musical compositions and sound effects, and implemented it utilising Unity’s audio engine and FMOD middleware depending the project scope.</li>
-                                <li>Employed Git and Fork for version control, managing code re]positories and collaborating with team members through branching and merging strategies.</li>
-                            </ul>
-                            <hr>
-                            <h6 class="title text-danger">Dingaloo Studios</h6>
-                            <h7>Unity Developer (external contractor / freelancer)</h7>
-                            <p>2024</p>
-                            <ul class="no-margin-list subtitle" style="text-align: justify;">
-                                <li>Developed AR game prototypes using Unity, integrating with backend services to handle event-driven interactions and real-time updates.</li>
-                                <li>Implemented scalable game architectures utilizing design patterns and manager classes to support the future addition of new features and content.</li>
-                                <li>Employed PlasticSCM for version control.</li>
-                            </ul>
-                        </div>
+                      </div>
+                      <div class="card-body">
+                        <h6 class="title text-danger">Noni Games Studios</h6>
+                        <h7>Unity Developer - Technical Sound Designer</h7>
+                        <p>2023 – Present</p>
+                        <a href="javascript:void(0);" class="toggle-link" onclick="toggleList('noni-list', this)">
+                            <i class="fas fa-chevron-right arrow-icon"></i> Show details
+                          </a>
+                        <ul id="noni-list" class="no-margin-list subtitle collapsible" style="text-align: justify;">
+                          <li>Developed gameplay mechanics including asynchronous scene transitions, dynamic player movement programming, trading, inventory and weather systems, and AI programming.</li>
+                          <li>Created original musical compositions and sound effects, and implemented it utilising Unity’s audio engine and FMOD middleware depending the project scope.</li>
+                          <li>Employed Git and Fork for version control, managing code re]positories and collaborating with team members through branching and merging strategies.</li>
+                        </ul>
+                        <hr>
+                        <h6 class="title text-danger">Dingaloo Studios</h6>
+                        <h7>Unity Developer (external contractor / freelancer)</h7>
+                        <p>2024</p>
+                        <a href="javascript:void(0);" class="toggle-link" onclick="toggleList('dingaloo-list', this)">
+                            <i class="fas fa-chevron-right arrow-icon"></i> Show details
+                          </a>
+                          <ul id="dingaloo-list" class="no-margin-list subtitle collapsible" style="text-align: justify;">
+                            <li>Developed AR game prototypes using Unity, integrating with backend services to handle event-driven interactions and real-time updates.</li>
+                            <li>Implemented scalable game architectures utilizing design patterns and manager classes to support the future addition of new features and content.</li>
+                            <li>Employed PlasticSCM for version control.</li>
+                          </ul>
+                          <hr>
+                        <h6 class="title text-danger">Freelancer/Independent</h6>
+                        <h7>Mixing Engineer & producer</h7>
+                        <p>2020 - 2024</p>
+                        <a href="javascript:void(0);" class="toggle-link" onclick="toggleList('freelance-list', this)">
+                            <i class="fas fa-chevron-right arrow-icon"></i> Show details
+                          </a>
+                          <ul id="freelance-list" class="no-margin-list subtitle collapsible" style="text-align: justify;">
+                            <li>Worked with clients from all over the world, providing mixing, mastering, and production services</li>
+                            <li>50+ professional projects on Airgigs, earning a "Top Rated Pro Studio" badge with perfect rating</li>
+                            <li>Check my reviews and professional profile <a href="https://www.airgigs.com/user/fedev" target="_blank" rel="noopener noreferrer">here</a></li>
+                          </ul>
+                      </div>
                     </div>
-                </div>
+                  </div>
                 <div class="col-lg-4">
                     <div class="card">
                         <div class="card-header">
@@ -535,6 +554,17 @@
             alert('There was an error sending your message.');
         });
     });
+
+    function toggleList(listId, element) {
+    var list = document.getElementById(listId);
+    if (list.classList.contains('open')) {
+        list.classList.remove('open');
+        element.querySelector('i').classList.remove('rotate');
+    } else {
+        list.classList.add('open');
+        element.querySelector('i').classList.add('rotate');
+    }
+    }
     </script>
 
 </body>

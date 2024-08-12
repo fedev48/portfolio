@@ -118,6 +118,28 @@ hr {
   font-size: 1rem;
 }
 
+.collapsible {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+.collapsible.open {
+  max-height: 500px; 
+}
+
+.toggle-link i {
+  transition: transform 0.2s ease-out;
+}
+
+.toggle-link i.rotate {
+  transform: rotate(90deg);
+}
+
+.arrow-icon {
+  font-size: 0.75em; /* Ajusta este valor según el tamaño deseado */
+}
+
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
