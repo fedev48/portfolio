@@ -288,7 +288,7 @@
                 <div class="portfolio-container">
                     <div class="col-md-6 col-lg-4 soundDesign all">
                         <div class="portfolio-item">
-                            <div class="video-popup" data-toggle="modal" data-target="#videoModal" data-video="assets/vids/Animated_logo_v1.mp4" data-title="Noni Games' Animated Logo" data-description="Sound Design, composition and orquestration for a given animated logo">
+                            <div class="video-popup" data-toggle="modal" data-volume = 0.35 data-target="#videoModal" data-video="assets/vids/Animated_logo_v1.mp4" data-title="Noni Games' Animated Logo" data-description="Sound Design, composition and orquestration for a given animated logo">
                                 <img src="assets/vids/gifs/noni_logo.gif" class="img-fluid" alt="">
                                 <div class="content-holder">
                                     <div class="text-holder">
@@ -299,9 +299,23 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-6 col-lg-4 soundDesign all">
+                        <div class="portfolio-item">
+                            <div class="video-popup" data-toggle="modal" data-target="#videoModal" data-video="https://www.youtube.com/embed/wN4NGiZP48E" data-title="Charge" data-description="
+                            This example is based on a clip from the movie 'Pan's Labyrinth' (2006). For this clip, a musical composition was created and orchestrated. Additionally, complete foley and sound effects were created.">
+                                <img src="assets/vids/gifs/charge.gif" class="img-fluid" alt="">
+                                <div class="content-holder">
+                                    <div class="text-holder">
+                                        <h6 class="title">Charge</h6>
+                                        <p class="subtitle">Film Scoring</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-md-6 col-lg-4 unity all">
                         <div class="portfolio-item">
-                            <div class="video-popup" data-toggle="modal" data-target="#videoModal" data-video="assets/vids/1117888_A1_SWR509-4.mp4" data-title="Film Scoring / Sound design" data-description="
+                            <div class="video-popup" data-toggle="modal" data-volume = 0.55 data-target="#videoModal" data-video="assets/vids/1117888_A1_SWR509-4.mp4" data-title="Film Scoring / Sound design" data-description="
                             This example is based on a clip from the movie 'Pan's Labyrinth' (2006). For this clip, a musical composition was created and orchestrated. Additionally, complete foley and sound effects were created."
                             data-show-details="true">
                                 <img src="assets/vids/gifs/only_sound_sample1.gif" class="img-fluid" alt="">
@@ -314,24 +328,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 soundDesign all">
+                    <!-- <div class="col-md-6 col-lg-4 soundDesign all">
                         <div class="portfolio-item">
-                            <div class="video-popup" data-toggle="modal" data-target="#videoModal" data-video="https://www.youtube.com/watch?v=dBpjRmdlLPI" data-title="Charge" data-description="
-                            This example is based on a clip from the movie 'Pan's Labyrinth' (2006). For this clip, a musical composition was created and orchestrated. Additionally, complete foley and sound effects were created.">
-                                <img src="assets/imgs/Charge.jpg" class="img-fluid" alt="">
-                                <div class="content-holder">
-                                    <div class="text-holder">
-                                        <h6 class="title">Charge</h6>
-                                        <p class="subtitle">Film Scoring</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 soundDesign all">
-                        <div class="portfolio-item">
-                            <div class="video-popup" data-toggle="modal" data-target="#videoModal" data-video="https://www.youtube.com/embed/anotherURL3" data-title="Noni Games" data-description="Animated logo sound desing">
-                                <img src="assets/imgs/web-4.jpg" class="img-fluid" alt="">
+                            <div class="video-popup" data-toggle="modal" data-target="#videoModal" data-video="https://www.youtube.com/watch?v=1ZZQuj6htF4&list=PLccyMEGlhcJ3sWrgE7cJfLQvcas4OiS_H" data-title="Noni Games" data-description="Animated logo sound desing">
+                                <img src="assets/vids/gifs/charge.gif" class="img-fluid" alt="">
                                 <div class="content-holder">
                                     <div class="text-holder">
                                         <h6 class="title">Noni Games</h6>
@@ -340,15 +340,18 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col-md-6 col-lg-4 soundDesign all">
                         <div class="portfolio-item">
-                            <div class="video-popup" data-toggle="modal" data-target="#videoModal" data-video="https://www.youtube.com/embed/anotherURL4" data-title="ADVERSITING" data-description="Expedita corporis doloremque velit in totam!">
-                                <img src="assets/imgs/advertising-1.jpg" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free bootstrap 4 templates">
+                            <div class="video-popup" data-toggle="modal" data-volume=0.4 data-target="#videoModal" data-video="assets/vids/FMOD_Akakuma.mp4" data-title="FMOD implementation example" data-description="
+                            Explanation of the implementation of FMOD and scripting in Unity to create a music menu that transitions when the game starts. 
+                            Additionally, some asynchronous scene management can be observed. I was responsible for the orchestration, composition, FMOD project development,
+                            programming, and Unity integration in this example.">
+                                <img src="assets/imgs/Fmod_Akakuma.png" class="img-fluid" alt="">
                                 <div class="content-holder">
                                     <div class="text-holder">
-                                        <h6 class="title">ADVERSITING</h6>
-                                        <p class="subtitle">Expedita corporis doloremque velit in totam!</p>
+                                        <h6 class="title">FMOD implementation example</h6>
+                                        <p class="subtitle">FMOD and scripting to create adaptable music menu</p>
                                     </div>
                                 </div>
                             </div>
@@ -548,6 +551,13 @@
             var videoUrl = button.data('video');
             var title = button.data('title');
             var description = button.data('description');
+            if (button.data('volume') !== undefined && button.data('volume') !== null) 
+            {
+            var volume = button.data('volume');
+            }else {
+            var volume = 1;
+            }
+            
 
             var modal = $(this);
             modal.find('.modal-title').text(title);
@@ -558,6 +568,9 @@
                 $('#videoModalVideo').show();
                 $('#videoModalVideoSource').attr('src', videoUrl);
                 $('#videoModalVideo')[0].load();
+                $('#videoModalVideo')[0].volume = volume;
+                
+
             } else {
                 $('#videoModalVideo').hide();
                 $('#videoModalIframe').show();
