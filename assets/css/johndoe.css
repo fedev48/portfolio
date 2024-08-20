@@ -11229,90 +11229,100 @@ p {
 .price-card.price-card-requried .num {
   color: var(--fedeDetail);
 }
-
-.custom-carousel-image {
-  width: 60%; 
-  height: 400px; 
-  object-fit: contain; 
-}
-
-
 /* audio player */
 
-.player-container{
-  /* background:var(--light); */
+.player-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.player-container .heading{
+
+.player-container .heading {
   font-size: 3rem;
-  padding:2rem 0;
+  padding: 2rem 0;
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  text-shadow:0.5rem 1rem #000;
+  text-shadow: 0.5rem 1rem #000;
 }
 
-.player-container .music-container{
+.player-container .music-container {
   display: flex;
-  align-items: center;
-  flex-flow: column;
-
+  flex-wrap: wrap; /* Permitir que los reproductores se envuelvan en pantallas pequeñas */
+  justify-content: space-between; /* Espacio entre los reproductores */
+  gap: 1rem; /* Espacio entre los reproductores */
+  width: 100%;
 }
 
-.player-container .music-container .box{
-  height: 8rem;
-  width: 80%;
+.player-container .music-container .boxTextAudio {
+  flex: 1 1 calc(50% - 1rem); /* Cada contenedor ocupa el 50% del ancho del contenedor menos el espacio entre ellos */
+  margin: 0.5rem 0; /* Reducir el margen vertical */
+}
+
+.player-container .music-container .box {
+  height: 6rem;
   display: flex;
   align-items: center;
   background: var(--fedeDetail);
   border-radius: 1rem;
-  box-shadow:0.2rem 0.2rem rgba(0, 0, 0, 0.5);
+  box-shadow: 0.2rem 0.2rem rgba(0, 0, 0, 0.5);
   overflow: hidden;
-  margin:2rem;
-
 }
 
-.player-container .music-container .box .image{
+.player-container .music-container .box .image {
   height: 100%;
   width: 25%;
   min-width: 100px; /* Añadir un ancho mínimo */
-
 }
-.player-container .music-container .box .image img{
+
+.player-container .music-container .box .image img {
   height: 100%;
   width: 100%;
-  object-fit:cover;
+  object-fit: cover;
 }
 
-.player-container .music-container .box .music{
-  width:75%;
+.player-container .music-container .boxTextAudio .song-title{
+  font-size: 1rem; 
+  color:#adadad; 
+  margin: 0.5rem 0; 
+  text-align: left; 
+  font-weight:normal; 
+}
+
+.player-container .music-container .box .music {
+  width: 75%;
   min-width: 200px; /* Añadir un ancho mínimo */
 }
-.player-container .music-container .box .music audio{
-  width:100%;
-  outline:none ;
 
+.player-container .music-container .box .music audio {
+  width: 100%;
+  outline: none;
 }
 
-.player-container .music-container .box .music audio::-webkit-media-controls-enclosure{
-  background:none;
+.player-container .music-container .box .music audio::-webkit-media-controls-enclosure {
+  background: none;
 }
 
-@media (max-width: 600px){
-  .player-container .music-container .box{
-    height: 18rem;
-    width: 90%;
+@media (max-width: 850px) {
+  .player-container .music-container {
+    flex-direction: column; /* Cambiar la dirección del flex a columna */
+  }
+  .player-container .music-container .boxTextAudio {
+    width: 100%;
+  }
+  .player-container .music-container .box {
+    height: auto; /* Ajustar la altura automáticamente */
+    width: 100%;
     flex-flow: column;
   }
-  .container .music-container .box .image{
-    width: 80%;
-    height: 100%;
-    min-width: 200px; /* Añadir un ancho mínimo */
+  .player-container .music-container .box .image {
+    width: 100%;
+    height: 50%;
   }
-  .container .music-container .box .music{
-    width: 20%;
-    height: 100%;
-    min-width: 350px; /* Añadir un ancho mínimo */
+  .player-container .music-container .box .music {
+    width: 100%;
+    height: 50%;
+    min-width: 350px;
   }
-
 }
 
 
@@ -11321,20 +11331,30 @@ p {
 /* end audiplayer */
 
 /* starts carrousel */
+
+.custom-carousel-image {
+  width: 100%; 
+  height: 400px; 
+  object-fit: contain; 
+}
+
+
 .carousel-container {
-  position: relative; /* Asegurarse de que el contenedor del carrusel tenga una posición relativa */
+  position: relative;
+  width: 70%; 
+  margin: 0 auto;
 }
 
 .custom-carousel-image {
-  padding-top: 20px; /* Ajustar el padding superior de las imágenes */
-  padding-bottom: 20px; /* Ajustar el padding inferior de las imágenes */
-  width: 100%;
-  height: auto;
+  padding-top: 20px; 
+  padding-bottom: 20px; 
+  width: 50%;
+  height:auto;
 }
 
 .carousel-indicators {
   position: absolute;
-  padding-bottom: 5px; /* Ajustar el padding inferior de las imágenes */
+  padding-bottom: 5px; 
   left: 50%;
   transform: translateX(-50%);
   display: flex;
