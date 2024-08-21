@@ -320,7 +320,7 @@
                             <div class="video-popup" data-toggle="modal" data-volume = 0.55 data-target="#videoModal" data-video="assets/vids/1117888_A1_SWR509-4.mp4" data-title="Film Scoring / Sound design" data-description="
                             This example is based on a clip from the movie 'Pan's Labyrinth' (2006). For this clip, a musical composition was created and orchestrated. Additionally, complete foley and sound effects were created."
                             data-show-details="true">
-                                <img src="assets/vids/gifs/only_sound_sample1.gif" class="img-fluid" alt="">
+                                <img src="assets/vids/gifs/pans.gif" class="img-fluid" alt="">
                                 <div class="content-holder">
                                     <div class="text-holder">
                                         <h6 class="title">Pan's Labyrinth</h6>
@@ -359,6 +359,28 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-6 col-lg-4 soundDesign all">
+                        <div class="portfolio-item">
+                            <div class="video-popup special-video-popup" data-toggle="modal" data-target="#videoModal" 
+                                 data-video="https://www.youtube.com/embed/dBpjRmdlLPI" 
+                                 data-title="Film Scoring / Sound design" 
+                                 data-description="This example is based on a clip from the movie Inception (2010). This sample was created to showcase sound design (and foley), ADR (re-record of dialogue in post-production), and mixing for media. 
+                                 The music in this clip is not my own, but my compositions can be found in other examples in my portfolio.
+                                 Dialogue replacement was conducted using a condenser microphone to achieve a clear and neutral sound. Actors were guided by a cue sound to begin their recordings. Voices were edited, selecting the best takes and synchronizing lip movements through cutting, dragging, and time-stretching.
+                                 Mixing played a vital role in balancing the recordings through volume automation, equalisation, and the application of reverbs to position each character in different settings.
+                                 The foley crafted for this scene was comprehensive, covering every aspect from clothing rustles and footsteps to object manipulation. The sounds of cars and city environments were artificially created by combining multiple recordings from sound libraries, processed with filters and reverb to achieve a realistic effect that seamlessly complements camera changes and perspectives.
+                                 The sound design of this scene was created by combining pre-recorded processed samples and sounds crafted using FM and subtractive synthesis. Examples of this can be heard at 1:38 when the flight attendant presses the button, and at 4:07 when the train collides with the protagonists' car.">
+                                <img src="assets/vids/gifs/Incep.gif" class="img-fluid" alt="">
+                                <div class="content-holder">
+                                    <div class="text-holder">
+                                        <h6 class="title">Inception</h6>
+                                        <p class="subtitle">Sound design/ADR (Voice over recording and Lip Sync)/Mixing</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                       
                     <div class="col-md-6 col-lg-4 unity all">
                         <div class="portfolio-item">
                             <div class="video-popup" data-toggle="modal" data-target="#videoModal" data-video="assets/vids/noni_reel.mp4" data-title="Noni Games demo reel" data-description="In this reel, you can see some of the games that I contributed on developing as a programmer">
@@ -682,23 +704,28 @@
     <!-- JohnDoe js -->
     <script src="assets/js/johndoe.js"></script>
     <script>
-        $(document).ready(function() {
+    $(document).ready(function() {
         $('#videoModal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget); 
             var videoUrl = button.data('video');
             var title = button.data('title');
             var description = button.data('description');
-            if (button.data('volume') !== undefined && button.data('volume') !== null) 
-            {
-            var volume = button.data('volume');
-            }else {
-            var volume = 1;
-            }
-            
-
+            var volume = button.data('volume') !== undefined && button.data('volume') !== null ? button.data('volume') : 1;
             var modal = $(this);
+
             modal.find('.modal-title').text(title);
-            modal.find('#videoModalDescription').text(description);
+
+            
+            if (button.hasClass('special-video-popup')) {
+                
+                var formattedDescription = description.split('\n').map(function (text) {
+                    return '<p>' + text.trim() + '</p>';
+                }).join('');
+                modal.find('#videoModalDescription').html(formattedDescription);
+            } else {
+                
+                modal.find('#videoModalDescription').text(description);
+            }
 
             if (videoUrl.endsWith('.mp4')) {
                 $('#videoModalIframe').hide();
@@ -706,8 +733,6 @@
                 $('#videoModalVideoSource').attr('src', videoUrl);
                 $('#videoModalVideo')[0].load();
                 $('#videoModalVideo')[0].volume = volume;
-                
-
             } else {
                 $('#videoModalVideo').hide();
                 $('#videoModalIframe').show();
@@ -763,7 +788,5 @@
         });
         });
     </script>
-    
-
 </body>
 </html>
